@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------
-# AUTHOR: your name
+# AUTHOR: Nishara Hysmith
 # FILENAME: title of the source file
 # SPECIFICATION: description of the program
 # FOR: CS 4210- Assignment #3
@@ -22,14 +22,14 @@ decision_function_shape = ["ovo", "ovr"]
 highestAccuracy = 0
 
 #reading the data in a csv file
-with open('optdigits.tra', 'r') as trainingFile:
+with open('CS_4210_HW_3/optdigits.tra', 'r') as trainingFile:
   reader = csv.reader(trainingFile)
   for i, row in enumerate(reader):
       X_training.append(row[:-1])
       Y_training.append(row[-1])
 
 #reading the data in a csv file
-with open('optdigits.tes', 'r') as testingFile:
+with open('CS_4210_HW_3/optdigits.tes', 'r') as testingFile:
   reader = csv.reader(testingFile)
   for i, row in enumerate(reader):
       dbTest.append (row)
@@ -37,10 +37,10 @@ with open('optdigits.tes', 'r') as testingFile:
 #created 4 nested for loops that will iterate through the values of c, degree, kernel, and decision_function_shape
 #--> add your Python code here
 
-for : #iterates over c
-    for : #iterates over degree
-        for : #iterates kernel
-           for : #iterates over decision_function_shape
+for i in c: #iterates over c
+    for j in degree: #iterates over degree
+        for k in kernel: #iterates kernel
+            for l in decision_function_shape: #iterates over decision_function_shape
 
                 #Create an SVM classifier that will test all combinations of c, degree, kernel, and decision_function_shape as hyperparameters. For instance svm.SVC(c=1)
                 clf = svm.SVC()
@@ -50,8 +50,8 @@ for : #iterates over c
 
                 #make the classifier prediction for each test sample and start computing its accuracy
                 #--> add your Python code here
-                for :
-                    class_predicted = clf.predict([[3, 1, 2, 1, ...]]
+                #for :
+                #    class_predicted = clf.predict([[3, 1, 2, 1, ...]]
 
                 #check if the calculated accuracy is higher than the previously one calculated. If so, update update the highest accuracy and print it together with the SVM hyperparameters
                 #Example: "Highest SVM accuracy so far: 0.92, Parameters: a=1, degree=2, kernel= poly, decision_function_shape = 'ovo'"
